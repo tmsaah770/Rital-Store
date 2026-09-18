@@ -243,8 +243,8 @@ npm run dev
 
 ---
 
-### 👨‍💻 10. المطور / Developer
-
+### 👨‍💻 10. المطور/ Developer 
+* محمود أبو طالب (Mahmoud Abotaleb)
 * **GitHub:** [@tmsaah770](https://github.com/tmsaah770)
 
 <p align="center">
