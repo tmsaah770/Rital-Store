@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الموظفين</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+
+    <!-- ============================================ -->
+    <!-- صفحة الأوردرات - تظهر بعد تسجيل الدخول بنجاح -->
+    <!-- ============================================ -->
+  <section class="dashboard" id="employee-orders-section" style="display:none;">
+
+    <div class="orders-top-bar">
+        <h1 class="dashboard-title">أوردرات <span id="employee-branch-label"></span></h1>
+        <a href="dashboard.html" id="admin-dashboard-link" class="logout-btn" style="display:none;">إدارة المنتجات</a>
+        <button type="button" id="employee-logout-btn" class="logout-btn">تسجيل خروج</button>
+    </div>
+
+    <!-- زرار إنشاء طلبية جديدة - يظهر للأدمن بس -->
+    <div class="create-order-bar" id="create-order-bar">
+        <button type="button" id="create-order-btn" class="create-order-btn">+ إنشاء طلبية جديدة</button>
+    </div>
+
+    <div class="orders-list" id="orders-list">
+
+        <!-- كارت أوردر 1 -->
+        <div class="order-card" data-branch="1">
+            <div class="order-header">
+                <span class="order-id">#1024</span>
+                <span class="order-branch" data-field="branch">فرع 1</span>
+                <span class="order-date">تم الطلب: <span data-field="createdDate">اليوم - 10:30 ص</span></span>
+            </div>
+
+            <div class="order-body">
+                <p class="order-type"><strong>نوع الأوردر:</strong> <span data-field="type">فستان سهرة</span></p>
+                <p><strong>اللون:</strong> <span data-field="color">أسود</span> &nbsp; | &nbsp; <strong>المقاس:</strong> <span data-field="size">M</span></p>
+                <p class="order-price"><strong>السعر:</strong> <span data-field="price">450</span> جنيه (دفع عند الاستلام)</p>
+
+                <hr class="order-divider">
+
+                <p><strong>العميل:</strong> <span data-field="customer">سارة أحمد</span></p>
+                <p><strong>الهاتف:</strong> <span data-field="phone">01012345678</span></p>
+                <p><strong>الإيميل:</strong> <span data-field="email">لا يوجد</span></p>
+                <p><strong>العنوان:</strong> <span data-field="address">القاهرة - مدينة نصر - شارع مصطفى النحاس</span></p>
+
+                <hr class="order-divider">
+
+                <p class="order-timing"><strong>وقت الإنشاء:</strong> <span data-field="createdTime">اليوم 10:30 ص</span></p>
+                <p class="order-timing"><strong>وقت التسليم:</strong> <span data-field="deliveredTime">لسه ماتسلمش</span></p>
+
+                <p class="failure-note" style="display:none;">
+                    <strong>سبب فشل التوصيل:</strong> <span class="failure-reason-text"></span>
+                </p>
+            </div>
+
+            <div class="order-footer">
+                <select class="order-status" data-order-id="1024">
+                    <option value="preparing">قيد التجهيز</option>
+                    <option value="out_for_delivery">قيد التوصيل</option>
+                    <option value="delivered">تم التوصيل</option>
+                    <option value="failed">فشل التوصيل</option>
+                </select>
+            </div>
+
+            <!-- زراير الأدمن: تعديل وحذف - مخفية افتراضيًا -->
+            <div class="order-actions">
+                <span class="save-success-msg">تم الحفظ بنجاح</span>
+                <button type="button" class="admin-edit-btn" style="display:none;">تعديل</button>
+                <button type="button" class="admin-delete-btn" style="display:none;">حذف</button>
+            </div>
+        </div>
+
+        <!-- كارت أوردر 2 -->
+        <div class="order-card" data-branch="1">
+            <div class="order-header">
+                <span class="order-id">#1023</span>
+                <span class="order-branch" data-field="branch">فرع 1</span>
+                <span class="order-date">تم الطلب: <span data-field="createdDate">أمس - 6:15 م</span></span>
+            </div>
+
+            <div class="order-body">
+                <p class="order-type"><strong>نوع الأوردر:</strong> <span data-field="type">سوتيان</span></p>
+                <p><strong>اللون:</strong> <span data-field="color">بيج</span> &nbsp; | &nbsp; <strong>المقاس:</strong> <span data-field="size">L</span></p>
+                <p class="order-price"><strong>السعر:</strong> <span data-field="price">250</span> جنيه (دفع عند الاستلام)</p>
+
+                <hr class="order-divider">
+
+                <p><strong>العميل:</strong> <span data-field="customer">مريم علي</span></p>
+                <p><strong>الهاتف:</strong> <span data-field="phone">01098765432</span></p>
+                <p><strong>الإيميل:</strong> <span data-field="email">mariam@example.com</span></p>
+                <p><strong>العنوان:</strong> <span data-field="address">الجيزة - الدقي</span></p>
+
+                <hr class="order-divider">
+
+                <p class="order-timing"><strong>وقت الإنشاء:</strong> <span data-field="createdTime">أمس 6:15 م</span></p>
+                <p class="order-timing"><strong>وقت التسليم:</strong> <span data-field="deliveredTime">اليوم 9:00 ص</span></p>
+
+                <p class="failure-note" style="display:none;">
+                    <strong>سبب فشل التوصيل:</strong> <span class="failure-reason-text"></span>
+                </p>
+            </div>
+
+            <div class="order-footer">
+                <select class="order-status" data-order-id="1023">
+                    <option value="preparing">قيد التجهيز</option>
+                    <option value="out_for_delivery">قيد التوصيل</option>
+                    <option value="delivered" selected>تم التوصيل</option>
+                    <option value="failed">فشل التوصيل</option>
+                </select>
+            </div>
+
+            <div class="order-actions">
+                <span class="save-success-msg">تم الحفظ بنجاح</span>
+                <button type="button" class="admin-edit-btn" style="display:none;">تعديل</button>
+                <button type="button" class="admin-delete-btn" style="display:none;">حذف</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ============================================ -->
+    <!-- نافذة سبب فشل التوصيل - تظهر في نص الشاشة -->
+    <!-- ============================================ -->
+    <div class="checkout-overlay" id="failure-overlay">
+        <div class="checkout-box">
+            <button type="button" class="checkout-close" id="failure-close">×</button>
+
+            <h3 class="checkout-section-title">سبب فشل التوصيل - أوردر <span id="failure-order-id"></span></h3>
+
+            <select id="failure-reason-select" class="input">
+                <option value="">اختاري السبب</option>
+                <option value="no_answer">العميل لم يرد على المندوب</option>
+                <option value="refused">العميل رفض استلام الأوردر</option>
+                <option value="wrong_address">العنوان غير صحيح / غير موجود</option>
+                <option value="postponed">العميل طلب تأجيل التوصيل</option>
+                <option value="other">سبب آخر</option>
+            </select>
+
+            <textarea id="failure-reason-details" class="input" rows="3" placeholder="تفاصيل إضافية (اختياري)"></textarea>
+
+            <p id="failure-error" class="login-error"></p>
+
+            <button type="button" id="failure-confirm-btn" class="confirm-order-btn">حفظ</button>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>

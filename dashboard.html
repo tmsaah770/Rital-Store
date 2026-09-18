@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="dashboard">
+        <h1 class="dashboard-title">لوحة التحكم</h1>
+
+        <!--
+            الأرقام دي دلوقتي ثابتة (placeholder) بس عشان تشوف الشكل.
+            الباك إند هيحط كود JavaScript يجيب الأرقام الحقيقية من
+            قاعدة البيانات ويحطها مكان الأرقام دي (id بتاعت كل رقم موجود تحت).
+        -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <p class="stat-number" id="total-visitors">100</p>
+                <p class="stat-label">عدد الزوار</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="stat-number" id="whatsapp-clicks">100</p>
+                <p class="stat-label">ضغطات زرار واتساب</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="stat-number" id="product-clicks">100</p>
+                <p class="stat-label">ضغطات على المنتجات</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number" id="product-seales">100</p>
+                <p class="stat-label">عدد المبيعات الي تمت</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number" id="product-returns">100</p>
+                <p class="stat-label">عدد المرتجعات </p>
+            </div>
+
+        </div>
+
+        <!-- هنا مكان قسم تعديل الأسعار والمنتجات (لوحة التحكم بتاعت المنتجات) -->
+        <section class="products-manager">
+            <h2>إدارة المنتجات</h2>
+
+            <p class="option-label">صور المنتج</p>
+            <p class="dash-hint">اختاري أكتر من صورة. الصور الصغيرة هتظهر جنب الصورة الكبيرة زي صفحة المنتج.</p>
+            <input id="photo-input" type="file" accept="image/*" multiple>
+
+            <div class="photo-box" id="photo-box">
+                <div class="small-photos" id="small-photos"></div>
+                <div class="big-photo-wrap">
+                    <button type="button" class="photo-arrow photo-prev" id="photo-prev">‹</button>
+                    <img class="big-photo" id="big-photo" src="photos/photo-2.png" alt="صورة المنتج">
+                    <button type="button" class="photo-arrow photo-next" id="photo-next">›</button>
+                </div>
+            </div>
+
+            <p class="option-label">اسم المنتج</p>
+            <input id="product-name" class="input" type="text" placeholder="مثال : معرفش ب صراحه اسامي فساتين">
+
+            <p class="option-label">نوع المنتج</p>
+            <input id="product-type" class="input" type="text" placeholder="مثال: فستان">
+
+            <p class="option-label">الألوان المتاحة</p>
+            <p class="dash-hint">اضغطي على الدائرة عشان تفعّلي اللون للمنتج. اللي عليها إطار هي الظاهرة في صفحة المنتج.</p>
+            <div class="color-row" id="dash-color-row">
+                <button type="button" class="color-dot selected" data-color="أسود" style="background-color: #2b2b2b;" aria-label="أسود"></button>
+                <button type="button" class="color-dot selected" data-color="رمادي" style="background-color: #8a7d74;" aria-label="رمادي"></button>
+                <button type="button" class="color-dot selected" data-color="بيج" style="background-color: #e8dcc8;" aria-label="بيج"></button>
+                <button type="button" class="color-dot selected" data-color="كحلي" style="background-color: #2c3e50;" aria-label="كحلي"></button>
+                <button type="button" class="color-dot selected" data-color="بني" style="background-color: #a67c52;" aria-label="بني"></button>
+                <button type="button" class="color-dot selected" data-color="ابيض" style="background-color: #ffff;" aria-label="ابيض"></button>
+            </div>
+            <input type="hidden" id="available-colors" value="أسود,رمادي,بيج,كحلي,بني">
+
+            <p class="option-label">المقاسات المتاحة</p>
+            <p class="dash-hint">نفس الفكرة: المقاس المظلل هو اللي هيظهر للعميلة.</p>
+            <div class="size-row" id="dash-size-row">
+                <button type="button" class="size-btn selected" data-size="S">S</button>
+                <button type="button" class="size-btn selected" data-size="M">M</button>
+                <button type="button" class="size-btn selected" data-size="L">L</button>
+                <button type="button" class="size-btn selected" data-size="XL">XL</button>
+                <button type="button" class="size-btn selected" data-size="2XL">2XL</button>
+            </div>
+            <input type="hidden" id="available-sizes" value="S,M,L,XL,2XL">
+
+            <p class="option-label">السعر</p>
+            <input id="product-price" class="input" type="text" placeholder="مثال:300 جنيه مصري">
+
+            <p class="option-label">رابط التواصل عبر الواتس اب</p>
+            <input id="whatsapp-link" class="input" type="url" placeholder="حط رابط الواتس هنا ياعمهم">
+            <br>
+            <br>
+            <p id="save-message" class="dash-hint"></p>
+            <div class="buttons-container">
+                <button type="button" id="save-btn">حفظ</button>
+                <button type="button" id="delete-btn">حذف</button>
+            </div>
+
+
+            <br>
+            <br>
+        </section>
+    </section>
+
+<script src="main.js"></script>
+</body>
+</html>

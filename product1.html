@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج - ريتال ستور</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="index.html" class="back-link">رجوع للمتجر</a>
+
+    <div class="product-detail">
+
+        <div class="product-detail-media">
+            <div class="photo-box" id="photo-box">
+                <div class="small-photos" id="small-photos"></div>
+                <div class="big-photo-wrap">
+                    <button type="button" class="photo-arrow photo-prev" id="photo-prev">‹</button>
+                    <img class="big-photo" id="big-photo" src="photos/photo-2.png" alt="اسم الفستان">
+                    <button type="button" class="photo-arrow photo-next" id="photo-next">›</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-detail-info">
+
+            <h1 class="product-detail-name">اسم الفستان</h1>
+
+            <span class="stock-badge">متاح للطلب</span>
+
+            <p class="product-detail-price">450 جنيه</p>
+
+            <p class="option-label">
+                اللون:
+                <span id="chosen-color">أسود</span>
+            </p>
+
+            <div class="color-row" id="color-row">
+                <button type="button" class="color-dot selected" data-color="أسود" style="background-color: #2b2b2b;" aria-label="أسود"></button>
+                <button type="button" class="color-dot" data-color="رمادي" style="background-color: #8a7d74;" aria-label="رمادي"></button>
+                <button type="button" class="color-dot" data-color="بيج" style="background-color: #e8dcc8;" aria-label="بيج"></button>
+                <button type="button" class="color-dot" data-color="كحلي" style="background-color: #2c3e50;" aria-label="كحلي"></button>
+                <button type="button" class="color-dot" data-color="بني" style="background-color: #a67c52;" aria-label="بني"></button>
+            </div>
+
+            <p class="option-label">
+                المقاس:
+                <span id="chosen-size">L</span>
+            </p>
+
+            <div class="size-row" id="size-row">
+                <button type="button" class="size-btn selected" data-size="L">L</button>
+                <button type="button" class="size-btn" data-size="XL">XL</button>
+                <button type="button" class="size-btn" data-size="2XL">2XL</button>
+            </div>
+
+            <button type="button" id="whatsapp-order-btn" class="whatsapp-order-btn">
+                اطلب الآن
+            </button>
+
+        </div>
+    </div>
+
+<div class="checkout-overlay" id="checkout-overlay">
+    <div class="checkout-box">
+        <button type="button" class="checkout-close" id="checkout-close">×</button>
+        <div class="checkout-summary">
+            <div class="summary-product">
+                <img id="checkout-product-img" src="photos/photo-2.png" alt="">
+                <div class="summary-product-info">
+                    <p id="checkout-product-name" class="summary-product-name"></p>
+                    <p id="checkout-product-options" class="summary-product-options"></p>
+                </div>
+                <p id="checkout-product-price" class="summary-product-price"></p>
+            </div>
+            <div class="summary-line">
+                <span>المجموع الفرعي</span>
+                <span id="checkout-subtotal"></span>
+            </div>
+            <div class="summary-line">
+                <span>الشحن</span>
+                <span class="free-shipping">مجاني</span>
+            </div>
+            <div class="summary-line summary-total">
+                <span>الإجمالي</span>
+                <span id="checkout-total"></span>
+            </div>
+        </div>
+
+        <form id="checkout-form">
+            <h3 class="checkout-section-title">بيانات التواصل</h3>
+            <input type="tel" id="checkout-phone" class="input" placeholder="رقم الموبايل" required>
+            <h3 class="checkout-section-title">عنوان التوصيل</h3>
+            <input type="text" id="checkout-name" class="input" placeholder="الاسم بالكامل" required>
+            <input type="text" id="checkout-address" class="input" placeholder="العنوان بالتفصيل" required>
+            <input type="text" id="checkout-city" class="input" placeholder="المحافظة / المدينة" required>
+            <h3 class="checkout-section-title">طريقة الدفع</h3>
+            <div class="payment-option selected">
+                <span>الدفع عند الاستلام (كاش)</span>
+                <span class="payment-check">✓</span>
+            </div>
+            <p id="checkout-error" class="login-error"></p>
+            <button type="submit" class="confirm-order-btn">تأكيد الطلب</button>
+        </form>
+    </div>
+</div>
+
+<div class="checkout-overlay" id="success-overlay">
+    <div class="checkout-box success-box">
+        <div class="success-icon">✓</div>
+        <h2 class="success-title">تم تأكيد الطلب بنجاح</h2>
+        <p class="success-text">هيتم التواصل معاكِ قريبًا لتأكيد التفاصيل والتوصيل.</p>
+        <p class="success-order-id" id="success-order-summary"></p>
+        <button type="button" class="confirm-order-btn" id="success-close-btn">تمام</button>
+    </div>
+</div>
+
+    <script src="main.js"></script>
+</body>
+</html>
